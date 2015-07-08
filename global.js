@@ -1,27 +1,55 @@
-var questions = ["What is Dipper's symbol? 1) glasses 2) ice 3) star 4) pine tree",
-"What of Mabel's creations for Grunkle Stan started a huge theory for the fans? 1) book 2) Mabel Juice 3) Wax Figure 4) scrap book", "What kind of pet does the kids have? 1) pig 2) Axolotl 3) Goat 4) Wax head of Larry King", "What is the pet's name? 1) Peaches 2) Jeff 3) Waddles 4) Fids", "Who is the author of the journals? 1) Your father 2) McGucket 3) Stanley 4) Stanford" ]
+window.onload = function(){
 
-var answers = [4, 3, 1, 3, 4]
-score = 0
-counter = 0
+  var questions = ["What is Dipper's symbol?",
+  "What of Mabel's creations for Grunkle Stan started a huge theory for the fans?", "What kind of pet does the kids have?", "What is the pet's name?", "Who is the author of the journals?" ];
 
-alert ("Welcome to the quiz game on Gravity Falls")
-alert ("You have 5 questions to answer lets get started")
+  var choice =["1) glasses 2) ice 3) star 4) pine tree", "1) book 2) Mabel Juice 3) Wax Figure 4) scrap book", "1) pig 2) Axolotl 3) Goat 4) Wax head of Larry King", "1) Peaches 2) Jeff 3) Waddles 4) Fids", "1) Your father 2) McGucket 3) Stanley 4) Stanford"];
 
-while (counter <=4){
-  alert(questions[counter]);
-  var answer = parseInt(prompt("What is your answer?"));
-  
-  if (answer === answers[counter]){
-    alert("correct")
-    score++;
+  var answers = ["4", "3", "1", "3", "4"];
+
+  score = 0;
+  counter = 0;
+
+  var question = document.getElementById("question");
+
+  question.innerText = questions[0]
+
+  var choices = document.getElementById("choices");
+
+  choices.innerText = choice[0]
+
+  var submitButton = document.getElementById("submitter");
+
+  var given_answer = function(){
+    
+    return document.getElementById("answer").value;
+
+  }
+  var is_correct_answer = function(answer_text){
+    
+    given_answer() === answers[0]
+    
   }
   
-  else{
-    alert("incorrect")
-  }
-  counter++;
-  
+  var update_question_result = function(correct){
+    
+    if (correct === true){
+      counter++;
+      document.getElementById("question_result").innerText = "Success!"
+    }
+    else {
+    
+      document.getElementById("question_result").innerText = "Success!"
+      
+    }
+  }; 
+
+
 }
-
-alert("You answered " + score + " of " + counter + " questions correctly.")
+// submitButton.onsubmit =
+// nextButton.onclick =
+//
+// var question_result = document.getElementById("question_result");
+// var nextButton = document.getElementById("next");
+// var total_result = document.getElementById("total_result");
+// var answer = document.getElementById("answer");
