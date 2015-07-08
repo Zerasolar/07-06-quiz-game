@@ -11,39 +11,60 @@ window.onload = function(){
   counter = 0;
 
   var question = document.getElementById("question");
-
-  question.innerText = questions[0]
-
   var choices = document.getElementById("choices");
-
-  choices.innerText = choice[0]
-
   var submitButton = document.getElementById("submitter");
+  var nextButton = document.getElementById("next");
+  var question_result = document.getElementById("question_result");
+  var total_result = document.getElementById("total_result");
+  
+  question.innerText = questions[counter];
+  choices.innerText = choice[counter];
+  
+   
 
   var given_answer = function(){
     
     return document.getElementById("answer").value;
 
-  }
+  };
+  
   var is_correct_answer = function(answer_text){
     
-    given_answer() === answers[0]
+    if (answer_text === answers[counter]){
+      return true;
+    }
+      return false;
     
-  }
+  };
   
   var update_question_result = function(correct){
     
-    if (correct === true){
-      counter++;
-      document.getElementById("question_result").innerText = "Success!"
+    if (correct) {
+
+      score++;
+      
+      document.getElementById("question_result").innerText = "Correct!"
     }
     else {
-    
-      document.getElementById("question_result").innerText = "Success!"
+      document.getElementById("question_result").innerText = "Incorrect!"
       
     }
-  }; 
-
+  };
+  
+  function process_answer_submission(){
+    var user_answer = given_answer();
+    update_question_result(is_correct_answer(user_answer));
+  }
+  
+  function next_button(){
+    counter++;
+    delete answer;
+    delete question_result;
+  }
+  
+  
+  submitButton.onclick = process_answer_submission
+  nextButton.onclick = next_button
 
 }
 // submitButton.onsubmit =
