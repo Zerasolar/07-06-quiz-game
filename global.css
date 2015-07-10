@@ -1,0 +1,11 @@
+h1{
+  font-size: 18px;
+}
+
+.question {
+  display: none;
+}
+
+.question.show {
+  display: block;
+}

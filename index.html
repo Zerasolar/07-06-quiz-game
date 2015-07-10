@@ -2,36 +2,56 @@
 <html>
 <head>
   <title>JS Quiz Game</title>
-  <script type='text/javascript' src='global.js'>
-  </script>
+  <link rel="stylesheet" href="global.css">
 </head>
 <body>
-  <div id="quiz">
+  <div data-info="question1" class="select">
+    <div id="question1" class="question show">
+      <h1>What is Dipper's symbol?</h1>
+      <p>1) glasses 2) ice 3) star 4) pine tree</p>
+    </div>
+  </div>
     
+  <div data-info="question2" class="select">
+    <div id="question2" class="question">
+      <h1>What of Mabel's creations for Grunkle Stan started a huge theory for the fans?</h1>
+      <p>1) book 2) Mabel Juice 3) Wax Figure 4) scrap book</p>
+    </div>
   </div>
   
-  <div id="question">
-    
-  </div>
-  
-  <div id="choices">
-    
-  </div>
-  
-  <input type "text" id="answer"></input>
-  
-  <button type= "button" id="submitter">Submit</button>
-  
-  <div id="question_result">
-    
-  </div>
-  
-  <button type= "button" id="next">Next</button>
-  
-  <div id="total_result">
-    
+  <div data-info="question3" class="select">
+    <div id="question3" class="question">
+      <h1>What kind of pet does the kids have?</h1>
+      <p>1) pig 2) Axolotl 3) Goat 4) Wax head of Larry King</p>
+    </div>
   </div>
 
+  <div data-info="question4" class="select">
+    <div id="question4" class="question">
+      <h1>What is the pet's name?</h1>
+      <p> 1) Peaches 2) Jeff 3) Waddles 4) Fids</p>
+    </div>
+  </div>
+
+  <div data-info="question5" class="select">
+    <div id="question5" class="question">
+      <h1>Who is the author of the journals?</h1>
+      <p> 1) Your father 2) McGucket 3) Stanley 4) Stanford</p>
+    </div>
+  </div>
+  <div id="question_result"></div>
+  <input type "text" id="answer"></input>
+  
+  <button type= "button" id="next">Next</button>
+  <button type= "button" id="submitter">Submit</button>
+  
+    <div id="total_result">
+    
+
+  </div>
+      
+  <script type='text/javascript' src='global.js'>
+  </script>
   
 </body>
 </html>
